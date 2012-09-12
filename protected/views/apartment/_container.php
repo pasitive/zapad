@@ -30,8 +30,7 @@
     <div class="row">
         <div class="span3">
             <ul class="unstyled">
-                <li class="span3"><strong>Метро: </strong> <i
-                    class="icon-map-marker"></i> <?php echo $model->metroName ?> </li>
+                <li class="span3"><i class="icon-map-marker"></i> м. <?php echo $model->metroName ?> </li>
                 <li class="span3"><strong>Кол-во квартир: </strong> <?php echo $model->flat_number ?> </li>
                 <li class="span3"><strong>Этажность: </strong> <?php echo $model->number_of_storeys ?> </li>
                 <li class="span3"><strong>Высота потолков: </strong> <?php echo $model->ceiling_height ?> м</li>

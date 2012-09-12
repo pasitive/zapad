@@ -66,8 +66,19 @@
         </div>
     </div>
 
+    <hr />
+
+    <h2>Информация о квартире</h2>
+
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'square', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'square', array('size' => 60, 'maxlength' => 255), array('class' => 'input-large', 'id' => 'square')); ?>
+        </div>
+    </div>
+
     <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Позвоните мне</button>
+        <button type="submit" class="btn btn-primary">Оставить заявку</button>
     </div>
 
 

@@ -15,6 +15,14 @@ class ContactForm extends CFormModel
     public $time;
 	public $verifyCode;
 
+    public $square;
+    public $room_number;
+    public $is_rent;
+    public $address;
+    public $price_from;
+    public $price_to;
+    public $apartment_id;
+
 	/**
 	 * Declares the validation rules.
 	 */
@@ -45,7 +53,14 @@ class ContactForm extends CFormModel
 			'body'=>'Ваш комментарий/вопрос',
             'time' => 'Удобное время звонка',
             'date' => 'Дата звонка',
-
+            
+            'square' => 'Площадь',
+            'room_number' => 'Кол-во комнат',
+            'is_rent' => 'Сдать в аренду',
+            'address' => 'Адрес',
+            'price_from' => 'Цена от',
+            'price_to' => 'до',
+            'apartment_id' => 'Жилой комплекс',
 		);
 	}
 }

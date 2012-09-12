@@ -33,7 +33,7 @@
         <div class="span3">
 
             <ul class="unstyled">
-                <li><strong>Метро: </strong> <i class="icon-map-marker"></i> <?php echo $model->metroName ?> </li>
+                <li><i class="icon-map-marker"></i> м. <?php echo $model->metroName ?> </li>
                 <li><strong>Комнат: </strong><?php echo $model->room_number ?></li>
                 <li><strong>Этаж: </strong><?php echo $model->floor ?></li>
                 <li><strong>Площадь: </strong><?php echo $model->square ?> м<sup>2</sup> </li>

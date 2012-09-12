@@ -49,7 +49,7 @@
                 <div class="tab-pane active" id="apartment-main-params_<?php echo $data->id ?>">
 
                     <ul class="unstyled">
-                        <li><strong>Метро: </strong> <i class="icon-map-marker"></i> <?php echo $data->metroName ?> </li>
+                        <li><i class="icon-map-marker"></i> м. <?php echo $data->metroName ?> </li>
                         <li><strong>Комнат: </strong><?php echo $data->room_number ?></li>
                         <li><strong>Этаж: </strong><?php echo $data->floor ?></li>
                         <li><strong>Площадь: </strong><?php echo $data->square ?> м<sup>2</sup> </li>
