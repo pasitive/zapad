@@ -68,7 +68,7 @@
                 'items' => array(
                     array('label' => 'Продажа квартир', 'url' => array(Yii::app()->homeUrl)),
                     array('label' => 'Аренда квартир', 'url' => array('/apartment/rent')),
-                    array('label' => 'ЖК на карте', 'url' => array('/map/index')),
+                    array('label' => 'Каталог элитных домов', 'url' => array('/map/index')),
                 ),
                 'htmlOptions' => array('class' => 'nav nav-main nav-pills nav-stacked')
             )); ?>
