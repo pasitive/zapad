@@ -66,7 +66,7 @@
 
                 <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Продажа квартир', 'url' => array(Yii::app()->homeUrl)),
+                    array('label' => 'Продажа квартир', 'url' => array('/')),
                     array('label' => 'Аренда квартир', 'url' => array('/apartment/rent')),
                     array('label' => 'Каталог элитных домов', 'url' => array('/map/index')),
                 ),
