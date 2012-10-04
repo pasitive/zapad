@@ -66,9 +66,8 @@
 
                 <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Главная страница', 'url' => array('/apartment/index')),
+                    array('label' => 'Продажа квартир', 'url' => array(Yii::app()->homeUrl)),
                     array('label' => 'Аренда квартир', 'url' => array('/apartment/rent')),
-                    array('label' => 'Продажа квартир', 'url' => array('/apartment/sale')),
                     array('label' => 'ЖК на карте', 'url' => array('/map/index')),
                 ),
                 'htmlOptions' => array('class' => 'nav nav-main nav-pills nav-stacked')
