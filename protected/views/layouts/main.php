@@ -66,9 +66,10 @@
 
                 <?php $this->widget('zii.widgets.CMenu', array(
                 'items' => array(
-                    array('label' => 'Продажа квартир', 'url' => array('/')),
+                    array('label' => 'Продажа квартир', 'url' => '/' . Yii::app()->homeUrl),
                     array('label' => 'Аренда квартир', 'url' => array('/apartment/rent')),
                     array('label' => 'Каталог элитных домов', 'url' => array('/map/index')),
+                    array('label' => 'Собсвенникам', 'url' => array('/page/view', 'name' => 'owners')),
                 ),
                 'htmlOptions' => array('class' => 'nav nav-main nav-pills nav-stacked')
             )); ?>
@@ -87,18 +88,18 @@
 
     <div class="span12" id="footer">
         <div style="text-align: center;">
-        <hr>
-        <?php $this->widget('zii.widgets.CMenu', array(
-        'items' => array(
-            array('label' => 'О компании', 'url' => array('/page/view', 'name' => 'about')),
-            array('label' => 'Услуги', 'url' => array('/page/view', 'name' => 'services')),
-            array('label' => 'Оценка', 'url' => array('/page/view', 'name' => 'assessment')),
-            array('label' => 'Вакансии', 'url' => array('/page/view', 'name' => 'vacancies')),
-            array('label' => 'Контакты', 'url' => array('/site/contact')),
-        ),
-    )); ?>
+            <hr>
+            <?php $this->widget('zii.widgets.CMenu', array(
+            'items' => array(
+                array('label' => 'О компании', 'url' => array('/page/view', 'name' => 'about')),
+                array('label' => 'Услуги', 'url' => array('/page/view', 'name' => 'services')),
+                array('label' => 'Оценка', 'url' => array('/page/view', 'name' => 'assessment')),
+                array('label' => 'Вакансии', 'url' => array('/page/view', 'name' => 'vacancies')),
+                array('label' => 'Контакты', 'url' => array('/site/contact')),
+            ),
+        )); ?>
 
-        &copy; Агентство элитной недвижимости &laquo;Запад&raquo;
+            &copy; Агентство элитной недвижимости &laquo;Запад&raquo;
         </div>
     </div>
 
