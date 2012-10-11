@@ -48,7 +48,7 @@
                 <ul class="unstyled" style="padding-left: 30px;font-size: 115%;">
                     <li>тел.: 8 917 555 0217</li>
                     <li>тел.: 8 917 555 7561</li>
-                    <li>email: <a href="mailto:info@zapad-elit.ru">info@zapad-elit.ru</a></li>
+                    <li>email: <a href="mailto:info@zapadrealty.ru">info@zapadrealty.ru</a></li>
                     <li><a href="skype:boldinovd?call"><img src="http://mystatus.skype.com/smallclassic/boldinovd"
                                                             style="border: none;" width="114" height="20"
                                                             alt="My status"/></a></a>
