@@ -10,6 +10,20 @@
     http://www.skype.com/go/skypebuttons
     -->
     <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+    <style>
+        a.zingaya_button {
+            display: block;
+            width: 231px;
+            height: 46px;
+            background: url(http://cdn.zingaya.com/img/buttons/7e69593761b8f544627bcac8bdd900e2_1350212533006.png) no-repeat;
+        }
+        a.zingaya_button:hover {
+            background-position: 0 -46px;
+        }
+        a.zingaya_button:active {
+            background-position: 0 -92px;
+        }
+    </style>
 
 </head>
 <body>
