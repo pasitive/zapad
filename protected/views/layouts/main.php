@@ -63,9 +63,7 @@
                     <li>тел.: 8 917 555 0217</li>
                     <li>тел.: 8 917 555 7561</li>
                     <li>email: <a href="mailto:info@zapadrealty.ru">info@zapadrealty.ru</a></li>
-                    <li><a href="skype:boldinovd?call"><img src="http://mystatus.skype.com/smallclassic/boldinovd"
-                                                            style="border: none;" width="114" height="20"
-                                                            alt="My status"/></a></a>
+                    <li><a href="http://zingaya.com/widget/7e69593761b8f544627bcac8bdd900e2" onclick="window.open(this.href+'?referrer='+escape(window.location.href)+'', '_blank', 'width=236,height=220,resizable=no,toolbar=no,menubar=no,location=no,status=no'); return false" class="zingaya_button"></a>
                     </li>
                 </ul>
             </div>

@@ -39,8 +39,6 @@
 
     <div class="grid_4 omega">
 
-        <a href="http://zingaya.com/widget/7e69593761b8f544627bcac8bdd900e2" onclick="window.open(this.href+'?referrer='+escape(window.location.href)+'', '_blank', 'width=236,height=220,resizable=no,toolbar=no,menubar=no,location=no,status=no'); return false" class="zingaya_button"></a>
-
         <div id="sidebar">
 
             <?php $this->widget('SpecialOffersWidget'); ?>
