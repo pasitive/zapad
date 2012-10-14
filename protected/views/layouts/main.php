@@ -16,6 +16,7 @@
             width: 231px;
             height: 46px;
             background: url(http://cdn.zingaya.com/img/buttons/7e69593761b8f544627bcac8bdd900e2_1350212533006.png) no-repeat;
+            margin-left: -30px;
         }
         a.zingaya_button:hover {
             background-position: 0 -46px;
