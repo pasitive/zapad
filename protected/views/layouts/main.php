@@ -13,16 +13,15 @@
     <style>
         a.zingaya_button {
             display: block;
-            width: 231px;
-            height: 46px;
-            background: url(http://cdn.zingaya.com/img/buttons/7e69593761b8f544627bcac8bdd900e2_1350212533006.png) no-repeat;
-            margin-left: -30px;
+            width: 176px;
+            height: 36px;
+            background: url(http://cdn.zingaya.com/img/buttons/7e69593761b8f544627bcac8bdd900e2_1350463443246.png) no-repeat;
         }
         a.zingaya_button:hover {
-            background-position: 0 -46px;
+            background-position: 0 -36px;
         }
         a.zingaya_button:active {
-            background-position: 0 -92px;
+            background-position: 0 -72px;
         }
     </style>
 
