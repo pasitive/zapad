@@ -87,8 +87,12 @@
 </div>
 
 <div class="span3">
-    <div class="well"><a class="btn btn-large" href="/site/contact"><i class="icon-signal"></i> Мы вам перезвоним</a></div>
-    <div class="well">На этом месте будут текстовые блоки</div>
+    <div class="well"><p>Если вы хотите посмотреть эту квартиру,
+        или подобрать квартиру с аналогичными параметрами в этом комплексе или других элитных комплексах Москвы,
+        мы с радостью вам поможем ,позвоните нам с сайта или оставьте заявку.</p>
+
+        <?php echo CHtml::link('Оставить заявку', array('/page/view', 'name' => 'owners'), array('class' => 'btn btn-medium btn-primary')) ?><br/><br/>
+    </div>
 <!--    <div class="well">На этом месте будут текстовые блоки</div>-->
 <!--    <div class="well">-->
 <!---->
