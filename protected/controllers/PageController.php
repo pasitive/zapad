@@ -21,6 +21,7 @@ class PageController extends Controller
 
             if($requestForm->validate()) {
                 $message = new YiiMailMessage;
+                $message->view = 'requestForm';
                 $message->setBody(array(
                     'model' => $requestForm
                 ));
