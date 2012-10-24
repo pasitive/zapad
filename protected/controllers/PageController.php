@@ -24,7 +24,7 @@ class PageController extends Controller
                 $message->view = 'requestForm';
                 $message->setBody(array(
                     'model' => $requestForm
-                ));
+                ), 'text/html');
                 $message->subject = 'Новое сообщение с сайта';
                 $message->addTo(Yii::app()->params['adminEmail']);
                 $message->from = 'noreply@zapadrealty.ru';
