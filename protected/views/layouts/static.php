@@ -24,7 +24,8 @@
 
 <div id="static-content" class="span9">
 
-<?php echo $content; ?>
+
+    <?php echo $content; ?>
 
 </div>
 

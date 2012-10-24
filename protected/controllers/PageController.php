@@ -11,15 +11,33 @@ class PageController extends Controller
      */
     public function actionView($name)
     {
+        $requestForm = new RequestForm();
         $model = Page::model()->findByAttributes(array(
             'name' => $name,
         ));
+
+        if(isset($_POST['RequestForm'])) {
+            $requestForm->attributes = $_POST['RequestForm'];
+
+            if($requestForm->validate()) {
+                $message = new YiiMailMessage;
+                $message->setBody(array(
+                    'model' => $requestForm
+                ));
+                $message->subject = 'Новое сообщение с сайта';
+                $message->addTo(Yii::app()->params['adminEmail']);
+                $message->from = 'noreply@zapadrealty.ru';
+                Yii::app()->mail->send($message);
+
+                Yii::app()->user->setFlash('success', 'Спасибо');
+            }
+        }
 
         if (!$model) {
             throw new CHttpException(404, 'Страница не найдена');
         }
 
-        $this->render('view', array('model' => $model));
+        $this->render('view', array('model' => $model, 'requestForm' => $requestForm));
     }
 
     /**
