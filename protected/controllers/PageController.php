@@ -22,7 +22,7 @@ class PageController extends Controller
             $ids = array();
             $raw = $_POST['Apartment']['parent_id'];
             foreach($raw as $id) {
-                $ids = intval($id);
+                $ids[] = intval($id);
             }
 
             if($requestForm->validate())
