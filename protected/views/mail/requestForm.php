@@ -10,7 +10,7 @@
     <li>Действие: <?php echo (($model->is_rent == 1) ? 'Продать' : 'Сдать') ?> </li>
     <li>Адрес: <?php echo CHtml::encode($model->address) ?> </li>
     <li>Сумма: <?php echo $model->price_from ?> - <?php echo $model->price_to ?> </li>
-    <li>ЖК: <?php echo $apartmentNames ?> </li>
+    <li>ЖК: <?php echo join(',', $apartmentNames) ?> </li>
     <li></li>
 </ul>
 
