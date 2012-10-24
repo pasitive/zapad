@@ -90,7 +90,8 @@
     </div>
 
     <div class="well">
-        <p>Текстовый блок с описанием еще чего нибудь</p>
+        <p>Если вы  хотите сдать или продать квартиру в этом  комплексе, пожалуйста <?php echo CHtml::link('заполните заявку', array('/page/view', 'name' => 'owners')) ?></p>
+        <?php echo CHtml::link('Оставить заявку', array('/page/view', 'name' => 'owners'), array('class' => 'btn btn-medium btn-primary')) ?><br/><br/>
     </div>
 
 </div>

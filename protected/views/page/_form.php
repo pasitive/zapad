@@ -76,6 +76,15 @@ foreach (Yii::app()->user->getFlashes() as $key => $message) {
         </div>
     </div>
 
+    <div class="control-group">
+        <?php echo $form->labelEx($requestForm, '[]apartment_id', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php $this->widget('ContainerListWidget', array(
+            'itemView' => 'containerWidget/_dropdown_item'
+        )) ?>
+        </div>
+    </div>
+
 
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Оставить заявку</button>
