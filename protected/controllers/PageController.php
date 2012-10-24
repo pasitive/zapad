@@ -16,17 +16,18 @@ class PageController extends Controller
             'name' => $name,
         ));
 
-        if(isset($_POST['RequestForm'])) {
+        if (isset($_POST['RequestForm'])) {
             $requestForm->attributes = $_POST['RequestForm'];
 
             $ids = array();
-            $raw = $_POST['Apartment']['parent_id'];
-            foreach($raw as $id) {
-                $ids[] = intval($id);
+            if (isset($_POST['Apartment']['parent_id'])) {
+                $raw = $_POST['Apartment']['parent_id'];
+                foreach ($raw as $id) {
+                    $ids[] = intval($id);
+                }
             }
 
-            if($requestForm->validate())
-            {
+            if ($requestForm->validate()) {
 
                 $criteria = new CDbCriteria();
                 $criteria->addInCondition('id', $ids);
@@ -34,7 +35,7 @@ class PageController extends Controller
                 $apartments = Apartment::model()->findAll($criteria);
 
                 $apartmentNames = array();
-                foreach($apartments as $apartment) {
+                foreach ($apartments as $apartment) {
                     $apartmentNames[] = $apartment->name;
                 }
 
