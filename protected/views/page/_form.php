@@ -77,7 +77,7 @@ foreach (Yii::app()->user->getFlashes() as $key => $message) {
     </div>
 
     <div class="control-group">
-        <?php echo $form->labelEx($requestForm, '[]apartment_id', array('class' => 'control-label')); ?>
+        <?php echo $form->labelEx($requestForm, 'apartment_id', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php $this->widget('ContainerListWidget', array(
             'itemView' => 'containerWidget/_dropdown_item'

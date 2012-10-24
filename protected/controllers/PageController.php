@@ -19,11 +19,30 @@ class PageController extends Controller
         if(isset($_POST['RequestForm'])) {
             $requestForm->attributes = $_POST['RequestForm'];
 
-            if($requestForm->validate()) {
+            $ids = array();
+            $raw = $_POST['Apartment']['parent_id'];
+            foreach($raw as $id) {
+                $ids = intval($id);
+            }
+
+            if($requestForm->validate())
+            {
+
+                $criteria = new CDbCriteria();
+                $criteria->addInCondition('id', $ids);
+                $criteria->index = 'id';
+                $apartments = Apartment::model()->findAll($criteria);
+
+                $apartmentNames = array();
+                foreach($apartments as $apartment) {
+                    $apartmentNames[] = $apartment->name;
+                }
+
                 $message = new YiiMailMessage;
                 $message->view = 'requestForm';
                 $message->setBody(array(
-                    'model' => $requestForm
+                    'model' => $requestForm,
+                    'apartmentNames' => $apartmentNames,
                 ), 'text/html');
                 $message->subject = 'Новое сообщение с сайта';
                 $message->addTo(Yii::app()->params['adminEmail']);
