@@ -60,8 +60,7 @@
             </div>
             <div class="span3" style="background-color: #f0f0f0;">
                 <ul class="unstyled" style="padding-left: 30px;font-size: 115%;">
-                    <li>тел.: 8 917 555 0217</li>
-                    <li>тел.: 8 917 555 7561</li>
+                    <li>тел.: 8 917 555 0217</li>                    
                     <li>email: <a href="mailto:info@zapadrealty.ru">info@zapadrealty.ru</a></li>
                     <li><a href="http://zingaya.com/widget/7e69593761b8f544627bcac8bdd900e2" onclick="window.open(this.href+'?referrer='+escape(window.location.href)+'', '_blank', 'width=236,height=220,resizable=no,toolbar=no,menubar=no,location=no,status=no'); return false" class="zingaya_button"></a>
                     </li>
