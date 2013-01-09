@@ -402,6 +402,10 @@ class Apartment extends CActiveRecord
         $query = '';
         $filters = array();
 
+        if(is_numeric($this->id)) {
+            $filters['document_id'] = intval($this->id);
+        }
+
         if (is_numeric($this->city_id)) {
             $filters['city_id'] = intval($this->city_id);
         }
