@@ -403,7 +403,7 @@ class Apartment extends CActiveRecord
         $filters = array();
 
         if(is_numeric($this->id)) {
-            $filters['document_id'] = intval($this->id);
+            $sphinx->SetIDRange($this->id, $this->id);
         }
 
         if (is_numeric($this->city_id)) {
