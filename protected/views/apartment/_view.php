@@ -50,7 +50,6 @@
 
                     <ul class="unstyled">
                         <li><i class="icon-map-marker"></i> м. <?php echo $data->metroName ?> </li>
-                        <li><strong>Код: </strong><?php echo $data->id ?></li>
                         <li><strong>Комнат: </strong><?php echo $data->room_number ?></li>
                         <li><strong>Этаж: </strong><?php echo $data->floor ?></li>
                         <li><strong>Площадь: </strong><?php echo $data->square ?> м<sup>2</sup> </li>
@@ -101,6 +100,7 @@
             </ul>
         </div>
         <?php echo CHtml::link('<i class="icon-info-sign"></i> Посмотреть подробное описание', array('/apartment/view', 'id' => $data->id), array('class' => 'btn')) ?>
+        <span class="btn">ID:<?php echo $data->id ?></span>
     </div>
 </div>
 
