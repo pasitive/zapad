@@ -34,7 +34,7 @@
         </ul>
     </div>
 
-    <div class="span4">
+    <div class="span4" style="position:relative;">
 
         <?php if (intval($data->parent_id) !== 0): ?>
         <h4><?php echo CHtml::link($data->parentName, array('/apartment/view', 'id' => $data->parent_id)) ?></h4>
@@ -100,7 +100,7 @@
             </ul>
         </div>
         <?php echo CHtml::link('<i class="icon-info-sign"></i> Посмотреть подробное описание', array('/apartment/view', 'id' => $data->id), array('class' => 'btn')) ?>
-        <span class="btn">ID:<?php echo $data->id ?></span>
+        <span style="position: absolute;top:0px;">ID:<?php echo $data->id ?></span>
     </div>
 </div>
 
