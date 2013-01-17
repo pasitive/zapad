@@ -100,7 +100,7 @@
             </ul>
         </div>
         <?php echo CHtml::link('<i class="icon-info-sign"></i> Посмотреть подробное описание', array('/apartment/view', 'id' => $data->id), array('class' => 'btn')) ?>
-        <span style="position: absolute;top:0px;">ID:<?php echo $data->id ?></span>
+        <span style="position: absolute;top:0px;left:94%;">ID:<?php echo $data->id ?></span>
     </div>
 </div>
 
