@@ -24,11 +24,13 @@
 <li class="span3">
     <div class="thumbnail">
         <?php echo CHtml::image($data->default_image, $data->name, array('width' => 260)) ?>
-        <div class="caption">
-            <h5><?php echo CHtml::encode(empty($data->parent_name) ? $data->typeName : $data->parent_name) ?>
-                , <?php echo CHtml::encode($data->address) ?></h5>
+        <div class="caption clearfix" style="line-height: 16px;">
+            <a style="font-size: 14px;margin-bottom: 2px;" href="<?php echo Yii::app()->createUrl('/apartment/view', array('id' => $data->parent_id)) ?>"><?php echo CHtml::encode(empty($data->parent_name) ? $data->typeName : $data->parent_name) ?></a>
+            <div><em>Цена</em>: <?php echo Yii::app()->numberFormatter->formatCurrency($data->price, 'RUB') ?> </div>
+            <div>Комнат: <?php echo CHtml::encode($data->room_number) ?> </div>
+            <div>Площадь: <?php echo CHtml::encode($data->square) ?> м<sup>2</sup> </div>
 
-            <?php echo CHtml::link('Подробнее', array('/apartment/view', 'id' => $data->id)) ?>
+            <div class="pull-right"><?php echo CHtml::link('Подробнее', array('/apartment/view', 'id' => $data->id)) ?></div>
         </div>
     </div>
 </li>

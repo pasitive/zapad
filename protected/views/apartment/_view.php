@@ -30,6 +30,9 @@
                 <div class="thumbnail">
                     <?php echo CHtml::image($data->default_image, $data->name, array('width' => 260)) ?>
                 </div>
+                <?php if($data->is_special): ?>
+                <p class="label" align="center" style="font-size:12px;">Спецпредложение</p>
+                <?php endif; ?>
             </li>
         </ul>
     </div>

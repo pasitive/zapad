@@ -37,56 +37,60 @@
 
         function init() {
             var map_options = {
-                    // Центр карты
-                    center:[55.72846,37.546603],
-                    // Коэффициент масштабирования
-                    zoom:12,
-                    // Тип карты
-                    type:"yandex#map"
-                },
-                map = new ymaps.Map('map_content', map_options),
-                collection = new ymaps.GeoObjectCollection();
-
-            ymaps.layout.storage.add('my#apartmentLayout', getHintLayout());
-
-            // Задаем наш шаблон для балунов геобъектов коллекции.
-            collection.options.set({
-                hintContentLayout:'my#apartmentLayout',
-                hintPane:'floats',
-                hintHideTimeout:20000
-            });
+                        // Центр карты
+                        center:[55.72846, 37.546603],
+                        // Коэффициент масштабирования
+                        zoom:12,
+                        // Тип карты
+                        type:"yandex#map"
+                    },
+                    map = new ymaps.Map('map_content', map_options);
 
             map.behaviors.enable('scrollZoom');
             map.controls
                 // Кнопка изменения масштаба
-                .add('zoomControl')
+                    .add('zoomControl')
                 // Список типов карты
-                .add('typeSelector');
+                    .add('typeSelector');
 
+            addMarkers(map);
+            addEvents(map);
+        }
 
-            function addMarkers() {
-                for (i = 0; i < data.length; i++) {
-                    var placemark = new ymaps.Placemark(data[i].coord, {
-                        imageUrl:data[i].default_image,
-                        name:(data[i].name.length == 0 ? data[i].type : data[i].name),
-                        address:data[i].address,
-                        moreLink:data[i].link,
-                        apartmentCount:data[i].apartment_count,
-                        moreLinkSuffix:(data[i].apartment_count > 0 ? '(' + data[i].apartment_count + ')' : '')
-                    }, {
-                        preset:'twirl#houseIcon'
-                    });
-                    collection.add(placemark);
-                }
-                map.geoObjects.add(collection);
+        function addEvents(map) {
+            map.geoObjects.events.add('mouseenter', function (e) {
+                e.get('target').balloon.open();
+            });
+        }
+
+        function addMarkers(map) {
+            var collection = new ymaps.GeoObjectCollection();
+            ymaps.layout.storage.add('my#apartmentLayout', getBalloonLayout());
+
+            // Задаем наш шаблон для балунов геобъектов коллекции.
+            collection.options.set({
+                balloonContentLayout:'my#apartmentLayout'
+            });
+
+            for (i = 0; i < data.length; i++) {
+                var placemark = new ymaps.Placemark(data[i].coord, {
+                    imageUrl:data[i].default_image,
+                    name:(data[i].name.length == 0 ? data[i].type : data[i].name),
+                    address:data[i].address,
+                    moreLink:data[i].link,
+                    apartmentCount:data[i].apartment_count,
+                    moreLinkSuffix:(data[i].apartment_count > 0 ? '(' + data[i].apartment_count + ')' : '')
+                }, {
+                    preset:'twirl#houseIcon'
+                });
+                collection.add(placemark);
             }
+            map.geoObjects.add(collection);
+        }
 
-            function getHintLayout() {
-                var layout = ymaps.templateLayoutFactory.createClass('<?php echo CJavaScript::quote($this->renderPartial('_map_hint_layout', null, true)) ?>');
-                return layout;
-            }
-
-            addMarkers();
+        function getBalloonLayout() {
+            var layout = ymaps.templateLayoutFactory.createClass('<?php echo CJavaScript::quote($this->renderPartial('_map_balloon_layout', null, true)) ?>');
+            return layout;
         }
     });
 </script>
