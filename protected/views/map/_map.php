@@ -59,7 +59,11 @@
 
         function addEvents(map) {
             map.geoObjects.events.add('mouseenter', function (e) {
-                e.get('target').balloon.open();
+                var balloon;
+                balloon = e.get('target').balloon.open();
+                balloon.events.add('mouseleave', function () {
+                    balloon.close();
+                });
             });
         }
 

@@ -20,8 +20,7 @@
  *
  */
 $this->pageTitle = Yii::t('app', 'Object list') . ' | ' . Yii::t('app', 'Application name');
-$this->breadcrumbs = array(
-);
+$this->breadcrumbs = array();
 
 ?>
 
@@ -37,7 +36,6 @@ Yii::app()->clientScript->registerScript('search', "
 ?>
 
 <div class="span7" id="content">
-
 
     <?php
     $this->widget('zii.widgets.CListView', array(
