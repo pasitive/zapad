@@ -28,9 +28,11 @@ class RequestForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			array('name, email', 'required'),
+            array('square, room_number, price_from, price_to', 'numerical'),
+            array('address', 'type', 'type' => 'string'),
 			// email has to be a valid email address
 			array('email', 'email'),
-            array('phone, time, date', 'safe'),
+            array('phone, time, date, apartment_id', 'safe'),
 			// verifyCode needs to be entered correctly
 //			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 		);
