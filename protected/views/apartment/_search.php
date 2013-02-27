@@ -21,6 +21,10 @@
  */
 ?>
 
+<?php
+$ss = Yii::app()->session['searchState'];
+?>
+
 <legend>Быстрый поиск</legend>
 
 <?php $form = $this->beginWidget('CActiveForm', array(
@@ -41,20 +45,20 @@
         <label class="control-label">Количество комнат</label>
 
         <div class="controls">
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('value' => 1, 'uncheckValue' => null)) ?> 1</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('value' => 2, 'uncheckValue' => null)) ?> 2</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('value' => 3, 'uncheckValue' => null)) ?> 3</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('value' => 4, 'uncheckValue' => null)) ?> 4</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('value' => 5, 'uncheckValue' => null)) ?> 5+</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[1]', array('uncheckValue' => null)) ?> 1</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[2]', array('uncheckValue' => null)) ?> 2</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[3]', array('uncheckValue' => null)) ?> 3</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[4]', array('uncheckValue' => null)) ?> 4</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[5]', array('uncheckValue' => null)) ?> 5+</label>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label">Общая площадь</label>
 
         <div class="controls">
-            <?php echo $form->textField($model, 'square[]', array('class' => 'span1', 'placeholder' => 'мин')) ?>
+            <?php echo $form->textField($model, 'square[]', array('class' => 'span1', 'placeholder' => 'мин', 'value' => (isset($ss['square'][0]) ? $ss['square'][0] : ''))) ?>
             &mdash;
-            <?php echo $form->textField($model, 'square[]', array('class' => 'span1', 'placeholder' => 'макс')) ?>
+            <?php echo $form->textField($model, 'square[]', array('class' => 'span1', 'placeholder' => 'макс', 'value' => (isset($ss['square'][1]) ? $ss['square'][1] : ''))) ?>
         </div>
     </div>
 
@@ -67,7 +71,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <?php $this->widget('ContainerListWidget', array(
-                        'itemView' => 'containerWidget/_dropdown_item'
+                        'itemView' => 'containerWidget/_dropdown_item',
                     )) ?>
                 </ul>
             </div>

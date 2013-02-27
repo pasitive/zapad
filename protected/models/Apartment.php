@@ -206,7 +206,7 @@ class Apartment extends CActiveRecord
             array('created_at, updated_at, lng, lat, rating, address, parent_id, is_special, description, is_rent, is_published, number_of_storeys, ', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, city_id, area_id, type_id, created_at, updated_at, is_special, container', 'safe', 'on' => 'search'),
+            array('id, name, city_id, area_id, type_id, created_at, updated_at, is_special, container, square', 'safe', 'on' => 'search'),
         );
     }
 
@@ -453,16 +453,17 @@ class Apartment extends CActiveRecord
 
         // Range filters
         if (!empty($this->room_number) && is_array($this->room_number)) {
-            if (in_array(5, $this->room_number)) {
-                $range = array_unique(array_merge(range(5, 100), $this->room_number));
+            $room_number = array_keys($this->room_number);
+            if (in_array(5, $room_number)) {
+                $range = array_unique(array_merge(range(5, 100), $room_number));
                 $sphinx->SetFilter('room_number', $range);
             } else {
-                $sphinx->SetFilter('room_number', $this->room_number);
+                $sphinx->SetFilter('room_number', $room_number);
             }
         }
 
         if (!empty($this->parent_id) && is_array($this->parent_id)) {
-            $sphinx->SetFilter('parent_id', $this->parent_id);
+            $sphinx->SetFilter('parent_id', array_keys($this->parent_id));
         }
 
         $this->setRangeFilter($sphinx, 'price', $float = true);

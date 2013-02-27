@@ -27,10 +27,11 @@ $this->breadcrumbs = array();
 <?php
 Yii::app()->clientScript->registerScript('search', "
     $('form#search').bind('keyup, change', function(){
+//        $(this).submit();
         $.fn.yiiListView.update('apartment-list', {
             data: $(this).serialize()
         });
-        return false;
+//        return false;
     });
 ");
 ?>
