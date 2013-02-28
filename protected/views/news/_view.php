@@ -21,9 +21,11 @@
  */
 ?>
 
-<div class="news_item">
-    <span class="date"><?php echo date('d.m.Y', strtotime($data->created_at)) ?></span>
+<div class="well">
+    <legend><?php echo CHtml::encode($data->title) ?></legend>
     <?php echo CHtml::encode($data->teaser) ?>
-    <br />
-    <?php echo CHtml::link('Читать полностью', array('/news/view', 'id' => $data->id), array('class' => 'more_link')) ?>
+    <div class="info">
+        <span class="label"><?php echo date('d.m.Y', strtotime($data->created_at)) ?></span>
+        <?php echo CHtml::link('Читать полностью<i class="icon icon-chevron-right"></i>', array('/news/view', 'id' => $data->id), array('class' => 'btn btn-small pull-right')) ?>
+    </div>
 </div>

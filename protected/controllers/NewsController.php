@@ -22,7 +22,7 @@
 class NewsController extends Controller
 {
 
-    public $layout = '//layouts/static';
+    public $layout = '//layouts/index';
 
     public function actionIndex()
     {

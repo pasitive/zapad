@@ -25,22 +25,30 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<h1>Новости компании</h1>
+<div class="span7">
 
-<div class="news_list">
-    <?php
-    $this->widget('zii.widgets.CListView', array(
-        'dataProvider' => $dataProvider,
-        'itemView' => '_view',
-        'template' => "{pager}<div class='clear'></div>{items}",
-        'pager' => array(
-            'class' => 'CLinkPager',
-            'cssFile' => false,
-            'nextPageLabel' => CHtml::image('/images/pager_arrow_next.png'),
-            'prevPageLabel' => CHtml::image('/images/pager_arrow_prev.png'),
-            'header' => 'Страницы:',
-            'maxButtonCount' => 4
-        ),
-    ));
-    ?>
+<legend>Новости</legend>
+
+<?php
+$this->widget('zii.widgets.CListView', array(
+    'dataProvider' => $dataProvider,
+    'itemView' => '_view',
+    'template' => "{pager}<div class='clear'></div>{items}",
+    'pager' => array(
+        'class' => 'CLinkPager',
+        'cssFile' => false,
+        'nextPageLabel' => CHtml::image('/images/pager_arrow_next.png'),
+        'prevPageLabel' => CHtml::image('/images/pager_arrow_prev.png'),
+        'header' => 'Страницы:',
+        'maxButtonCount' => 4
+    ),
+));
+?>
+
+
+</div>
+
+<div class="span3">
+    <legend>Спецпредложения</legend>
+    <?php $this->widget('SpecialOffersWidget', array('pageSize' => 5)); ?>
 </div>
