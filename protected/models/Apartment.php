@@ -453,7 +453,7 @@ class Apartment extends CActiveRecord
 
         // Range filters
         if (!empty($this->room_number) && is_array($this->room_number)) {
-            $room_number = array_keys($this->room_number);
+            $room_number = $this->room_number;
             if (in_array(5, $room_number)) {
                 $range = array_unique(array_merge(range(5, 100), $room_number));
                 $sphinx->SetFilter('room_number', $range);

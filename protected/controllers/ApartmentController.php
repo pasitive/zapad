@@ -25,12 +25,17 @@ class ApartmentController extends Controller
 
     public function actionIndex()
     {
-        //unset(Yii::app()->session['searchState']);
+//        unset(Yii::app()->session['searchState']);
         $model = new Apartment('search');
         $model->unsetAttributes();
 
-        if($searchState = Yii::app()->session['searchState']) {
-            $model->attributes = $searchState;
+
+        if ($searchState = Yii::app()->session['searchState']) {
+            foreach($searchState as $index => $value) {
+                if(isset($_GET[$index])) {
+                    $model->$index = $value;
+                }
+            }
         }
 
         if (isset($_GET['Apartment'])) {
@@ -54,8 +59,12 @@ class ApartmentController extends Controller
         $model = new Apartment('search');
         $model->unsetAttributes();
 
-        if($searchState = Yii::app()->session['searchState']) {
-            $model->attributes = $searchState;
+        if ($searchState = Yii::app()->session['searchState']) {
+            foreach($searchState as $index => $value) {
+                if(isset($_GET[$index])) {
+                    $model->$index = $value;
+                }
+            }
         }
 
         if (isset($_GET['Apartment'])) {

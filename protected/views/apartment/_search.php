@@ -45,11 +45,11 @@ $ss = Yii::app()->session['searchState'];
         <label class="control-label">Количество комнат</label>
 
         <div class="controls">
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[1]', array('uncheckValue' => null)) ?> 1</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[2]', array('uncheckValue' => null)) ?> 2</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[3]', array('uncheckValue' => null)) ?> 3</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[4]', array('uncheckValue' => null)) ?> 4</label>
-            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[5]', array('uncheckValue' => null)) ?> 5+</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('uncheckValue' => null, 'value' => 1)) ?> 1</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('uncheckValue' => null, 'value' => 2)) ?> 2</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('uncheckValue' => null, 'value' => 3)) ?> 3</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('uncheckValue' => null, 'value' => 4)) ?> 4</label>
+            <label class="checkbox inline"><?php echo $form->checkbox($model, 'room_number[]', array('uncheckValue' => null, 'value' => 5)) ?> 5+</label>
         </div>
     </div>
     <div class="control-group">
