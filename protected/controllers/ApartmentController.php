@@ -29,19 +29,7 @@ class ApartmentController extends Controller
         $model = new Apartment('search');
         $model->unsetAttributes();
 
-
-        if ($searchState = Yii::app()->session['searchState']) {
-            foreach($searchState as $index => $value) {
-                if(isset($_GET[$index])) {
-                    $model->$index = $value;
-                }
-            }
-        }
-
-        if (isset($_GET['Apartment'])) {
-            $model->attributes = $_GET['Apartment'];
-            Yii::app()->session['searchState'] = $_GET['Apartment'];
-        }
+        $this->loadSearchState($model);
 
         // Force NOT container published objects
         $model->container = 0;
@@ -59,18 +47,7 @@ class ApartmentController extends Controller
         $model = new Apartment('search');
         $model->unsetAttributes();
 
-        if ($searchState = Yii::app()->session['searchState']) {
-            foreach($searchState as $index => $value) {
-                if(isset($_GET[$index])) {
-                    $model->$index = $value;
-                }
-            }
-        }
-
-        if (isset($_GET['Apartment'])) {
-            $model->attributes = $_GET['Apartment'];
-            Yii::app()->session['searchState'] = $_GET['Apartment'];
-        }
+        $this->loadSearchState($model);
 
         // Force NOT container published objects
         $model->container = 0;
@@ -169,5 +146,25 @@ class ApartmentController extends Controller
             throw new CHttpException(404, 'Страница не найдена');
         }
         return $apartment;
+    }
+
+    protected function loadSearchState($model)
+    {
+        if (isset($_GET['Apartment'])) {
+            if ($searchState = Yii::app()->session['searchState']) {
+                foreach ($searchState as $index => $value) {
+                    if (isset($_GET[$index])) {
+                        $model->$index = $value;
+                    }
+                }
+            }
+
+            $model->attributes = $_GET['Apartment'];
+            Yii::app()->session['searchState'] = $_GET['Apartment'];
+        } else {
+            if ($searchState = Yii::app()->session['searchState']) {
+                $model->attributes = $searchState;
+            }
+        }
     }
 }
