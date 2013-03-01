@@ -27,12 +27,26 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<h1><?php echo CHtml::encode($model->title) ?></h1>
+<div class="span7">
+
+    <legend><?php echo CHtml::encode($model->title) ?></legend>
 
 
-<?php echo $model->content; ?>
+    <?php echo $model->content; ?>
 
 
-<div class="space"></div>
+    <div class="well" style="padding: 8px 0">
+        <ul class="nav nav-list">
+            <li>
+                <?php echo CHtml::link('<i class="icon-home"></i> Назад к списку новостей', array('/news')) ?>
+            </li>
+        </ul>
+    </div>
 
-<?php echo CHtml::link('Назад к списку новостей', array('/news/index'), array('class' => 'more_link')) ?>
+
+</div>
+
+<div class="span3">
+    <legend>Спецпредложения</legend>
+    <?php $this->widget('SpecialOffersWidget', array('pageSize' => 5)); ?>
+</div>
