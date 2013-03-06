@@ -66,5 +66,8 @@ Yii::app()->clientScript->registerScript('search', "
 
     <legend>Спецпредложения</legend>
     <?php $this->widget('SpecialOffersWidget', array('pageSize' => 5)); ?>
+
+    <legend>Новости</legend>
+    <?php $this->widget('NewsWidget'); ?>
 </div>
 

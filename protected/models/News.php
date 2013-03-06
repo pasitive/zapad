@@ -19,6 +19,14 @@ class News extends CActiveRecord
     public $routeable_description;
     public $routeable_title;
 
+    public function latest()
+    {
+        $criteria = $this->getDbCriteria();
+        $criteria->order = 'created_at DESC';
+        $criteria->limit = 5;
+        return $this;
+    }
+
     public function beforeValidate()
     {
         if (parent::beforeValidate()) {

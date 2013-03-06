@@ -1,5 +1,3 @@
-<?php $this->beginContent('//layouts/main'); ?>
-
 <?php
 /**
  * @author Denis A Boldinov
@@ -21,36 +19,25 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-?>
+class NewsWidget extends CWidget
+{
+    private $_dataProvider = null;
 
-<div id="content" class="grid_12 prepend_top">
+    public function getDataProvider()
+    {
+        return $this->_dataProvider;
+    }
 
-  <div class="shadow revert"></div>
+    public function init()
+    {
+        $this->_dataProvider = News::model()->latest()->search();
+    }
 
-  <div class="grid_8 alpha colborder">
-
-    <div id="main_content" class="prepend_left v_splitter">
-
-        <?php echo $content; ?>
-
-    </div>
-
-  </div>
-
-  <div class="grid_4 omega">
-
-    <div id="sidebar">
-
-        <?php $this->widget('SpecialOffersWidget'); ?>
-
-      <br/>
-
-
-    </div>
-  </div>
-
-  <div class="space"></div>
-  <div class="shadow"></div>
-
-</div>
-<?php $this->endContent(); ?>
+    public function run()
+    {
+        $viewData = array(
+            'dataProvider' => $this->dataProvider,
+        );
+        $this->render('news/list', $viewData);
+    }
+}

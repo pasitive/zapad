@@ -38,7 +38,7 @@ $this->breadcrumbs = array(
     <div class="well" style="padding: 8px 0">
         <ul class="nav nav-list">
             <li>
-                <?php echo CHtml::link('<i class="icon-home"></i> Назад к списку новостей', array('/news')) ?>
+                <?php echo CHtml::link('<i class="icon-home"></i> К списку новостей', array('/news')) ?>
             </li>
         </ul>
     </div>
