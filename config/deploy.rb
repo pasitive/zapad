@@ -70,7 +70,7 @@ namespace :deploy do
   end
 
   task :sphinx do
-    run "/usr/local/bin/searchd -c #{shared_path}/config/sphinx.conf --stop"
+    #run "/usr/local/bin/searchd -c #{shared_path}/config/sphinx.conf --stop"
     run "/usr/local/bin/searchd -c #{shared_path}/config/sphinx.conf"
     run "/usr/local/bin/indexer --all --rotate --config #{shared_path}/config/sphinx.conf"
   end
