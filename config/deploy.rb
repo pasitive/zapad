@@ -77,5 +77,5 @@ namespace :deploy do
 end  
 
 
-after 'deploy:finalize_update', 'deploy:sphinx'
+after 'deploy:restart', 'deploy:sphinx'
 after 'deploy:update_code', 'deploy:migrate'
