@@ -50,6 +50,9 @@ namespace :app do
 end
 
 namespace :deploy do                              
+
+  task :restart do
+  end
   
   task :migrate, :roles => :db, :only => { :primary => true } do
   end
@@ -66,11 +69,13 @@ namespace :deploy do
     run "rm -rf #{latest_release}/protected/runtime/cache"
   end
 
-  task :restart do
+  task :sphinx do
     run "/usr/local/bin/searchd -c #{shared_path}/config/sphinx.conf --stop"
     run "/usr/local/bin/searchd -c #{shared_path}/config/sphinx.conf"
     run "/usr/local/bin/indexer --all --rotate --config #{shared_path}/config/sphinx.conf"
   end
 end  
 
+
+after 'deploy:finalize_update', 'deploy:sphinx'
 after 'deploy:update_code', 'deploy:migrate'
