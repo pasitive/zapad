@@ -463,7 +463,8 @@ class Apartment extends CActiveRecord
         }
 
         if (!empty($this->parent_id) && is_array($this->parent_id)) {
-            $sphinx->SetFilter('parent_id', array_keys($this->parent_id));
+            $parent_id = array_unique($this->parent_id);
+            $sphinx->SetFilter('parent_id', array_keys($parent_id));
         }
 
         $this->setRangeFilter($sphinx, 'price', $float = true);

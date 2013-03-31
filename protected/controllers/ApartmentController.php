@@ -153,8 +153,9 @@ class ApartmentController extends Controller
         if (isset($_GET['Apartment'])) {
             if ($searchState = Yii::app()->session['searchState']) {
                 foreach ($searchState as $index => $value) {
-                    if (isset($_GET[$index])) {
-                        $model->$index = $value;
+                    if (isset($_GET['Apartment'][$index])) {
+                        $model->setAttribute($index, $value);
+//                        $model->$index = $value;
                     }
                 }
             }

@@ -1,15 +1,15 @@
 <?php
 $ss = Yii::app()->session['searchState'];
-$checked = '';
+$checked = false;
 if (isset($ss['parent_id'][$data->id]) && $key = $ss['parent_id'][$data->id]) {
-    $checked = ($key == 'on') ? 'checked' : '';
+    $checked = ($key == $data->id) ? true : false;
 }
 ?>
 <li>
     <div>
         <label class="checkbox">
-            <input type="checkbox"
-                   name="Apartment[parent_id][<?php echo $data->id ?>]" <?php echo $checked ?>> <?php echo $data->name ?>
+            <?php echo CHtml::activeCheckBox($model, 'parent_id['.$data->id.']', array('uncheckValue' => null, 'value' => $data->id, 'checked' => $checked)) ?>
+            <?php echo $data->name; ?>
         </label>
     </div>
 </li>

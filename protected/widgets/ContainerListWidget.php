@@ -13,7 +13,16 @@ class ContainerListWidget extends CWidget
 
     public $itemView;
 
+    public $viewData = array();
+
     private $_dataProvider;
+
+    private $_model;
+
+    public function getModel()
+    {
+        return $this->_model;
+    }
 
     public function init()
     {
@@ -25,7 +34,9 @@ class ContainerListWidget extends CWidget
             $this->viewFile = 'containerWidget/list';
         }
 
-        $model = new Apartment('search');
+        $this->_model = new Apartment('search');
+        $model = $this->model;
+
         $model->unsetAttributes();
 
         $model->is_published = 1;
@@ -43,6 +54,7 @@ class ContainerListWidget extends CWidget
             'pager' => array(
                 'pageSize' => 9999,
             ),
+            'model' => $this->getModel(),
         ));
     }
 }
