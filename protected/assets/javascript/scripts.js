@@ -17,8 +17,11 @@
 
 
 $(function () {
+  $('form#search .dropdown li').click(function (event) {
+    event.stopPropagation();
+  });
 
-    $('form#search .dropdown li').click(function (event) {
-        event.stopPropagation();
-    })
+  $('form#search .dropdown .dropdown-menu').mouseleave(function () {
+    $('form#search .dropdown .dropdown-toggle').dropdown('toggle');
+  });
 });
