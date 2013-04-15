@@ -19,7 +19,7 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-$this->pageTitle = Yii::t('app', 'Object list') . ' | ' . Yii::t('app', 'Application name');
+$this->pageTitle = Yii::t('app', 'Application name');
 $this->breadcrumbs = array();
 
 ?>
