@@ -116,6 +116,8 @@
 
 </div>
 
+<?php $this->renderPartial('layouts/_counters') ?>
+
 <script type="text/javascript" src="<?php echo $this->assetsUrl; ?>/bootstrap/js/bootstrap-dropdown.js"></script>
 <script type="text/javascript" src="<?php echo $this->assetsUrl; ?>/bootstrap/js/bootstrap-button.js"></script>
 <script type="text/javascript" src="<?php echo $this->assetsUrl; ?>/bootstrap/js/bootstrap-tab.js"></script>
