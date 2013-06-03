@@ -60,6 +60,7 @@
             <?php
             $this->widget('zii.widgets.CListView', array(
                 'id' => 'apartment-list',
+                'ajaxUpdate' => false,
                 'dataProvider' => $apartmentDataProvider,
                 'itemView' => '_view',
                 'template' => "{items}\n{pager}",
