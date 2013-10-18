@@ -23,6 +23,8 @@ class ApartmentController extends Controller
 {
     public $layout = '//layouts/index';
 
+    public $linkToContainer = true;
+
     public function actionIndex()
     {
 //        unset(Yii::app()->session['searchState']);
@@ -84,6 +86,8 @@ class ApartmentController extends Controller
 
     public function actionView($id = null)
     {
+
+        $this->linkToContainer = false;
 
         // Register yandex maps JS api
         Yii::app()->clientScript->registerScriptFile('http://api-maps.yandex.ru/2.0/?load=package.full&mode=release&lang=ru-RU');

@@ -40,7 +40,11 @@
     <div class="span4" style="position:relative;">
 
         <?php if (intval($data->parent_id) !== 0): ?>
+        <?php if($this->linkToContainer == true): ?>
         <h4><?php echo CHtml::link($data->parentName, array('/apartment/view', 'id' => $data->parent_id)) ?></h4>
+        <?php else: ?>
+        <h4><?php echo $data->parentName ?></h4>
+        <?php endif; ?>
         <address><?php echo CHtml::encode($data->address) ?></address>
         <?php else: ?>
         <h4><?php echo CHtml::encode(empty($data->name) ? $data->typeName : $data->name) ?></h4>
