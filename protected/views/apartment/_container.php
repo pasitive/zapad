@@ -62,7 +62,7 @@
                 'id' => 'apartment-list',
                 'ajaxUpdate' => false,
                 'dataProvider' => $apartmentDataProvider,
-                'itemView' => '_view',
+                'itemView' => '_view_container_item',
                 'template' => "{items}\n{pager}",
                 'pagerCssClass' => 'bootstrap-pager',
                 'pager' => array(
