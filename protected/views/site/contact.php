@@ -29,7 +29,20 @@
         </tr>
         <tr>
             <td>Банк</td>
-            <td>Банк ЗАО «МОССТРОЙЭКОНОМБАНК» г.Москва, Щелковское шоссе 86-51</td>
+            <td>Банк ЗАО «МОССТРОЙЭКОНОМБАНК»</td>
+        </tr>
+        <tr>
+            <td>Адрес регистрации</td>
+            <td>г.Москва, Щелковское шоссе 86-51</td>
+        </tr>
+        <tr>
+            <td>Фактический адрес</td>
+            <td>г.Москва, Мичуринский проспект д.7</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="//api-maps.yandex.ru/services/constructor/1.0/static/?sid=oSWGW5Im0SFy0Zvqu3DZn5nF5xKlG3yg&width=600&height=450" alt=""/>
+            </td>
         </tr>
     </table>
 
