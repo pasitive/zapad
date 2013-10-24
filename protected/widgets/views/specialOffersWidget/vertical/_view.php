@@ -30,7 +30,7 @@
             <div>Комнат: <?php echo CHtml::encode($data->room_number) ?> </div>
             <div>Площадь: <?php echo CHtml::encode($data->square) ?> м<sup>2</sup> </div>
 
-            <div class="pull-right"><?php echo CHtml::link('Подробнее', array('/apartment/view', 'id' => $data->id)) ?></div>
+            <div class="pull-right"><?php echo CHtml::link('Подробнее', array('/apartment/view', 'id' => $data->id, 'parent_id' => $data->parent_id)) ?></div>
         </div>
     </div>
 </li>
