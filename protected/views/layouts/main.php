@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+    <meta name='yandex-verification' content='742de57a9a87e7ed' />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
