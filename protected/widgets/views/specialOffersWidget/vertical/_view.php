@@ -25,7 +25,7 @@
     <div class="thumbnail">
         <?php echo CHtml::image($data->default_image, $data->name, array('width' => 260)) ?>
         <div class="caption clearfix" style="line-height: 16px;">
-            <?php echo CHtml::encode(empty($data->parent_name) ? $data->typeName : $data->parent_name) ?>
+            <b><?php echo CHtml::encode(empty($data->parent_name) ? $data->typeName : $data->parent_name) ?></b>
             <div><em>Цена</em>: <?php echo Yii::app()->numberFormatter->formatCurrency($data->price, 'RUB') ?> </div>
             <div>Комнат: <?php echo CHtml::encode($data->room_number) ?> </div>
             <div>Площадь: <?php echo CHtml::encode($data->square) ?> м<sup>2</sup> </div>
