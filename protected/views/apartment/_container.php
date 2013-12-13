@@ -90,9 +90,4 @@
         <?php echo $model->description ?>
     </div>
 
-    <div class="well">
-        <p>Если вы хотите посмотреть эту квартиру &dash; звоните. Нужно подобрать квартиру с аналогичными параметрами в этом комплексе или другом комплексе Москвы, <?php echo CHtml::link('оставьте заявку', array('/page/view', 'name' => 'owners')) ?>. Вам будет подготовлена полная информация о всех реальных предложениях на рынке в данный момент.</p>        
-        <?php echo CHtml::link('Оставить заявку', array('/page/view', 'name' => 'owners'), array('class' => 'btn btn-medium btn-primary')) ?><br/><br/>
-    </div>
-
 </div>
