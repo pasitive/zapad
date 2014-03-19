@@ -53,9 +53,9 @@ $this->widget('CTabView', array(
 <?php echo $form->hiddenField($model, 'type_name', array('value' => $model->type->name)); ?>
 <?php echo $form->hiddenField($model, 'user_id', array('value' => Yii::app()->user->id)); ?>
 
-<?php if (intval($model->type->container) === 0): ?>
-    <?php echo $form->hiddenField($model, 'parent_name', array('value' => $model->parent->name)); ?>
-    <?php endif; ?>
+#<?php if (intval($model->type->container) === 0): ?>
+#    <?php echo $form->hiddenField($model, 'parent_name', array('value' => $model->parent->name)); ?>
+#    <?php endif; ?>
 
 <div class="row buttons">
     <?php echo CHtml::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить'); ?>
